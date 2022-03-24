@@ -1,0 +1,106 @@
+def square(n):
+    for i in range(n):
+        print('* '*n)
+def pyramid(n):
+    for i in range(n):
+        print((n-i)*' ',(i+1)*'* ')
+def increasingTriangle(n):
+    for i in range(n):
+        print('* '*(i+1))
+def decreasingTriangle(n):
+    for i in range(n,0,-1):
+        print('* '*i)
+def IncInvTri(n):
+    for i in range(n):
+        print((n-i)*' ',(i+1)*'*')
+def diamond(n):
+    for i in range(n):
+        print((n-i)*' ',(i+1)*'* ')
+    print((n+1)*' *')
+    for i in range(n):
+        print((i+1)*' ',(n-i)*'* ')
+def DecInvTri(n):
+    for i in range(n,0,-1):
+        print(' '*(-1*(i-n)),'*'*i)
+def InvPyramid(n):
+    for i in range(n,0,-1):
+        print(' '*(-1*(i-n)),'* '*i)
+def house(n):
+    for i in range(n):
+        print((n-i)*' ',(i+1)*'* ')
+    for i in range(n-1):
+        print(' ','* '*n)
+def XmasTree(n):
+    n=12
+    for i in range(n+3):
+        print((n+3-i)*' ',(i+1)*'* ')
+    for i in range(n-4,n+3):
+        print((n+3-i)*' ',(i+1)*'* ')
+    for i in range(n-4,n+3):
+        print((n+3-i)*' ',(i+1)*'* ')
+    for i in range((n//2)-(n//9)):
+        print(' '*((n//2)+(n//3)),'* '*(n//2))
+def anypattern(p):
+    l=['Triangle','Pyramid','Diamond','Square','House','Xmas Tree']
+    Tri=['Increasing','Decreasing','Increasing Inverted','Decreasing Inverted']
+    Pyr=['Upright','Inverted']
+    print('Hello',p)
+    print()
+    print('we have the following patterns')
+    print(l)
+        
+    print()
+    print()
+    a=input('Enter pattern you want to print: ')
+    print()
+    if a not in l:
+        print('Enter a valid input ')
+    else:
+        if a=='Triangle':
+            print('types of',a,'are: ') 
+            print(Tri)
+            u=input('Which type of Triangle you want? ')
+            n=int(input('Enter size: '))
+            print()
+            print()
+            if u==Tri[0]:
+                (increasingTriangle(n))
+            elif u==Tri[1]:
+                (decreasingTriangle(n))
+            elif u==Tri[2]:
+                (IncInvTri(n))
+            elif u==Tri[3]:
+                (DecInvTri(n))
+            else:
+                print('Enter a valid type of Triangle')
+        elif a==l[1]:
+            print('Types of Pyramid are : ')
+            print(Pyr)
+            u=input('Which type of Pyramid you want? ')
+            n=int(input('Enter size: '))
+            print()
+            print()
+            if u==Pyr[0]:
+                print(pyramid(n))
+            elif u==Pyr[1]:
+                print(InvPyramid(n))
+            else:
+                print('Enter a valid type of Pyramid')
+        elif a==l[2]:
+            n=int(input('Enter Size : '))
+            print()
+            print()
+            print(diamond(n))
+        elif a==l[3]:
+            n=int(input('Enter size : '))
+            print()
+            print()
+            print(square(n))
+        elif a==l[4]:
+            n=int(input('Enter size : '))
+            print()
+            print()
+            print(house(n))
+        elif a==l[5]:
+            n=12
+            print(XmasTree(n))
